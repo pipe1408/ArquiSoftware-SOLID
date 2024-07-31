@@ -1,4 +1,4 @@
-package com.example.demo.unsolid;
+package com.example.demo.unsolid.unsolid;
 
 public interface EmployeeOperations {
     void addEmployee(String name);
