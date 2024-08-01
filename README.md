@@ -13,6 +13,7 @@
 5. Los atributos de la clase Employee podrían incluir el salario. Revisar getters y setters.
 6. De ser necesario, podría usarse una interfaz Employee y dos clases EmployeeFullTime y EmployeePartTime para que la clase EmployeeManager vaya acorde al principio de Liskov.
 7. La clase SalaryCalculator no debería instanciar un objeto EmployeeManager dentro del método calculateSalary().
+8. De acuerdo con los métodos en EmployeeManager, podría ser innecesaria la diferenciación entre Employee y PartTimeEmployee.
 
 ### Descripción de las soluciones
 1. .
