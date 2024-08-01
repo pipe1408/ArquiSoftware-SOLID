@@ -1,8 +1,8 @@
 # ArquiSoftware
 ### Integrantes
-  Valentina Rodríguez
-  Santiago Carrillo
-  Felipe Ballesteros
+- Valentina Rodríguez
+- Santiago Carrillo
+- Felipe Ballesteros
 
 
 ### Posibles problemas encontrados
