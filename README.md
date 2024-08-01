@@ -34,3 +34,6 @@ idóneo, pues en cambio podría utilizarse el patrón de inyección de dependenc
 5. .
 6. .
 7. .
+
+### Diagrama
+https://lucid.app/lucidchart/15ced8b9-7eb4-4477-96e0-916c038699b8/edit?viewport_loc=-1466%2C-333%2C3940%2C2000%2CHWEp-vi-RSFO&invitationId=inv_2a28a5d9-fb67-48b2-a02d-6c95ae150419
