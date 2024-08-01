@@ -6,14 +6,25 @@
 
 
 ### Posibles problemas encontrados
-1. La interfaz EmployeeOperations es aparentemente innecesaria, pues la clase EmployeeManager tiene exactamente el mismo código. Viola el principio de Single Responsibility.
+1. La interfaz EmployeeOperations es aparentemente innecesaria, pues la clase EmployeeManager tiene exactamente el mismo
+código. Viola el principio de Single Responsibility.
 2. En la clase EmployeePartTime, el método getName() genera una excepción.
 3. La clase ReportGenerator viola el principio Open/Closed. Crear interfaz Reporte.
-4. En la clase EmployeeManager, los métodos generateReport y calculateSalary podrían estar violando el principio de Single Responsibility.
-5. Los atributos de la clase Employee podrían incluir el salario. Revisar getters y setters.
-6. De ser necesario, podría usarse una interfaz Employee y dos clases EmployeeFullTime y EmployeePartTime para que la clase EmployeeManager vaya acorde al principio de Liskov.
-7. La clase SalaryCalculator no debería instanciar un objeto EmployeeManager dentro del método calculateSalary().
-8. De acuerdo con los métodos en EmployeeManager, podría ser innecesaria la diferenciación entre Employee y PartTimeEmployee.
+4. En la clase EmployeeManager, los métodos generateReport() y calculateSalary() podrían estar violando el principio de
+Single Responsibility.
+5. Los atributos de la clase Employee podrían incluir el salario. ~~Revisar getters y setters.~~
+6. La clase SalaryCalculator no debería instanciar un objeto EmployeeManager dentro del método calculateSalary().
+7. De acuerdo con los métodos en EmployeeManager, podría ser innecesaria la diferenciación entre Employee y PartTimeEmployee.
+
+### Principios SOLID violados
+- **Single Responsibility:** Al existir una interfaz EmployeeOperations y una única clase EmployeeManager que lo 
+implementa, resulta en un code-smell de código duplicado, y las dos clases compartiendo una sola responsabilidad.
+- **Open/Closed:** La clase ReportGenerator contiene dos métodos, uno para la generación de un archivo de Excel y otro
+para un archivo PDF, esto no permitiría que eventualmente se agregara un tercer tipo de archivo, por lo que la clase
+está cerrada a extensión y abierta a modificación, yendo completamente en contra de este principio.
+- **Dependency Inversion:** La clase SalaryCalculator depende de una clase (EmployeeManager) que implementa una interfaz
+(EmployeeOperations), además en el método calculateSalary() se crea una instancia del objeto EmployeeManager, que no es
+idóneo, pues en cambio podría utilizarse el patrón de inyección de dependencias.
 
 ### Descripción de las soluciones
 1. .
