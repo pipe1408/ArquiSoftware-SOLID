@@ -1,4 +1,4 @@
-# ArquiSoftware
+# Arquitectura de Software: Trabajo SOLID
 ### Integrantes
 - Valentina Rodríguez
 - Santiago Carrillo
@@ -14,7 +14,8 @@ código. Viola el principio de Single Responsibility.
 Single Responsibility.
 5. Los atributos de la clase Employee podrían incluir el salario. ~~Revisar getters y setters.~~
 6. La clase SalaryCalculator no debería instanciar un objeto EmployeeManager dentro del método calculateSalary().
-7. De acuerdo con los métodos en EmployeeManager, podría ser innecesaria la diferenciación entre Employee y PartTimeEmployee.
+7. De acuerdo con los métodos en EmployeeManager, podría ser innecesaria la diferenciación entre Employee y
+PartTimeEmployee.
 
 ### Principios SOLID violados
 - **Single Responsibility:** Al existir una interfaz EmployeeOperations y una única clase EmployeeManager que lo 
@@ -22,6 +23,10 @@ implementa, resulta en un code-smell de código duplicado, y las dos clases comp
 - **Open/Closed:** La clase ReportGenerator contiene dos métodos, uno para la generación de un archivo de Excel y otro
 para un archivo PDF, esto no permitiría que eventualmente se agregara un tercer tipo de archivo, por lo que la clase
 está cerrada a extensión y abierta a modificación, yendo completamente en contra de este principio.
+- **Liskov Substitution Principle:** La clase PartTimeEmployee genera una excepción cuando se llama al método getName(),
+esto significa que, tal y como se esperaría cuando se cumple este principio, esta clase no podría ser intercambiada con
+la clase que extiende (Employee) sin que se generara un error.
+- **Interface Segregation:**
 - **Dependency Inversion:** La clase SalaryCalculator depende de una clase (EmployeeManager) que implementa una interfaz
 (EmployeeOperations), además en el método calculateSalary() se crea una instancia del objeto EmployeeManager, que no es
 idóneo, pues en cambio podría utilizarse el patrón de inyección de dependencias.
@@ -36,4 +41,4 @@ idóneo, pues en cambio podría utilizarse el patrón de inyección de dependenc
 7. .
 
 ### Diagrama
-https://lucid.app/lucidchart/15ced8b9-7eb4-4477-96e0-916c038699b8/edit?viewport_loc=-1466%2C-333%2C3940%2C2000%2CHWEp-vi-RSFO&invitationId=inv_2a28a5d9-fb67-48b2-a02d-6c95ae150419
+[Diagrama en LucidChart](https://lucid.app/lucidchart/15ced8b9-7eb4-4477-96e0-916c038699b8/edit?viewport_loc=-1466%2C-333%2C3940%2C2000%2CHWEp-vi-RSFO&invitationId=inv_2a28a5d9-fb67-48b2-a02d-6c95ae150419)
