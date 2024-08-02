@@ -31,6 +31,16 @@ la clase que extiende (Employee) sin que se generara un error.
 (EmployeeOperations), además en el método calculateSalary() se crea una instancia del objeto EmployeeManager, que no es
 idóneo, pues en cambio podría utilizarse el patrón de inyección de dependencias.
 
+### Principios SOLID que fueron violados
+- **Single Responsibility:** En la clase EmployeeManager se viola el Principio de responsabilidad única porque, esta se supone que una clase que se encarga de manejar a los empleados, pero aparece un método que se encarga de guardar a los empleados...y ahí es donde se encuentra el error: que deberia haber una clase que se encarge de manejar a los empleados y otra clase que se encargue de guardar alarchivo.  
+
+- **Open/Closed:** 
+
+- **Interface Segregation:** La interface EmployeeOperations viola este principio ya que es una interface muy general, mientras que este principio nos dice que es mucho mejor tener interfaces más pequeñas pero más especificas. Entonces en este caso lo que hariamos seria hacer una interface para los empleados, una interface para el salario y una interface para guardar el archivo.
+
+- **Dependency Inversion:** La clase de SalaryCalculator viola el principio de inversión de dependencias ya que en el codigo esta depende directamente de EmployeeManager en lugar de una abstracción.
+
+
 ### Descripción de las soluciones
 1. .
 2. .

@@ -1,0 +1,5 @@
+package com.example.demo.solid;
+
+public interface SalaryOperations {
+    double calculateSalary(String name);
+}

@@ -2,7 +2,7 @@ package com.example.demo.unsolid.solid;
 
 import java.util.List;
 
-public class EmployeeManager {
+public class EmployeeManager implements EmployeeOperations{
 
     private final List<Employee> employees;
     private final Report report;
@@ -20,11 +20,4 @@ public class EmployeeManager {
         employees.removeIf(employee -> name.equals(employee.getName()));
     }
 
-    public void saveToFile(String name) {
-        for (Employee employee : employees) {
-            if (name.equals(employee.getName())) {
-                this.report.generateReport();
-            }
-        }
-    }
 }

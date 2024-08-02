@@ -1,7 +1,20 @@
-package com.example.demo.unsolid.solid;
+package com.example.demo.solid;
 
-public class SalaryCalculator {
-    public static double calculateSalary() {
-        return 100;
+public class SalaryCalculator implements SalaryOperations {
+    private EmployeeManager employeeManager;
+
+    public SalaryCalculator(EmployeeManager employeeManager) {
+        this.employeeManager = employeeManager;
+    }
+
+    @Override
+    public double calculateSalary(String name) {
+        Employee employee = employeeManager.findEmployeeByName(name);
+        if (employee != null) {
+            
+            return 0.0; // Ejemplo
+        }
+        return 0.0;
     }
 }
+
