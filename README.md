@@ -34,7 +34,13 @@ idóneo, pues en cambio podría utilizarse el patrón de inyección de dependenc
 ### Principios SOLID que fueron violados
 - **Single Responsibility:** En la clase EmployeeManager se viola el Principio de responsabilidad única porque, esta se supone que una clase que se encarga de manejar a los empleados, pero aparece un método que se encarga de guardar a los empleados...y ahí es donde se encuentra el error: que deberia haber una clase que se encarge de manejar a los empleados y otra clase que se encargue de guardar alarchivo.  
 
-- **Open/Closed:** 
+- **Open/Closed:** La clase ReportGenerator contiene dos métodos, uno para la generación de un archivo de Excel y otro
+para un archivo PDF, esto no permitiría que eventualmente se agregara un tercer tipo de archivo, por lo que la clase
+está cerrada a extensión y abierta a modificación, yendo completamente en contra de este principio.
+
+- **Liskov Substitution Principle:** La clase PartTimeEmployee genera una excepción cuando se llama al método getName(),
+esto significa que, tal y como se esperaría cuando se cumple este principio, esta clase no podría ser intercambiada con
+la clase que extiende (Employee) sin que se generara un error.
 
 - **Interface Segregation:** La interface EmployeeOperations viola este principio ya que es una interface muy general, mientras que este principio nos dice que es mucho mejor tener interfaces más pequeñas pero más especificas. Entonces en este caso lo que hariamos seria hacer una interface para los empleados, una interface para el salario y una interface para guardar el archivo.
 
