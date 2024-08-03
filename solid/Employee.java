@@ -13,10 +13,13 @@ public class Employee {
     }
 
     public double generateSalary() {
-        return SalaryCalculator.calculateSalary();
+        return 200;
     }
 
     public String getName() {
         return name;
+    }
+    public String getDepartment() {
+        return department;
     }
 }

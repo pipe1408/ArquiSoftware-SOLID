@@ -18,4 +18,9 @@ public class EmployeeManager implements EmployeeOperations {
     public void saveToFile(String name) {
         // Guardar en archivo
     }
+
+    @Override
+    public String findEmployeeByName(String name) {
+        return "";
+    }
 }

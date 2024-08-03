@@ -1,5 +1,7 @@
 package com.example.demo.unsolid.solid;
 
+import com.example.demo.unsolid.unsolid.SalaryCalculator;
+
 public class PartTimeEmployee extends Employee {
 
     public PartTimeEmployee(String name, String department) {
@@ -8,6 +10,6 @@ public class PartTimeEmployee extends Employee {
 
     @Override
     public double generateSalary() {
-        return SalaryCalculator.calculateSalary() / 2;
+    return 100;
     }
 }

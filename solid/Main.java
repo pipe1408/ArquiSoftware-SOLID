@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        PartTimeEmployee medioTiempoJuan = new PartTimeEmployee("Juan", "RRHH");
+        PartTimeEmployee medioTiempoJuan = new PartTimeEmployee("Juan", "Limpieza");
         Employee tiempoCompletoFelipe = new Employee("Felipe", "Operaciones");
         List<Employee> empleados = new ArrayList<>();
         ReportExcel excel = new ReportExcel();
@@ -18,10 +18,10 @@ public class Main {
         verSalarios(empleados);
 
     }
-
     private static void verSalarios(List<Employee> empleados) {
         for (Employee empleado : empleados) {
-            System.out.println(empleado.salary);
+            System.out.println(empleado.getName()+", "+empleado.getDepartment()+", "+empleado.salary);
+
         }
     }
 }
