@@ -9,19 +9,19 @@ public class Main {
         Employee tiempoCompletoFelipe = new Employee("Felipe", "Operaciones");
         List<Employee> empleados = new ArrayList<>();
         ReportExcel excel = new ReportExcel();
-        EmployeeManager manager = new EmployeeManager(empleados, excel);
-
+        ReportPDF pdf = new ReportPDF();
+        EmployeeManager manager = new EmployeeManager(empleados,excel);
         empleados.add(medioTiempoJuan);
         empleados.add(tiempoCompletoFelipe);
         manager.removeEmployee("Felipe");
         manager.addEmployee("Camila", "Gerencia");
-        verSalarios(empleados);
+        verEmpleados(empleados);
+        excel.generateReport();
 
     }
-    private static void verSalarios(List<Employee> empleados) {
+    private static void verEmpleados(List<Employee> empleados) {
         for (Employee empleado : empleados) {
             System.out.println(empleado.getName()+", "+empleado.getDepartment()+", "+empleado.salary);
-
         }
     }
 }

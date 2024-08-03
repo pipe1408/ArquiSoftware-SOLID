@@ -11,10 +11,11 @@ public class EmployeeManager implements EmployeeOperations{
         this.employees = employees;
         this.report = report;
     }
-    @Override
+
     public void addEmployee(String name, String departamento) {
         employees.add(new Employee(name, departamento));
     }
+
 
     public void removeEmployee(String name) {
         employees.removeIf(employee -> name.equals(employee.getName()));
