@@ -9,10 +9,11 @@ public class Main {
         ReportExcel excel = new ReportExcel();
         ReportPDF pdf = new ReportPDF();
         EmployeeManager manager = new EmployeeManager(empleados, excel);
-        empleados.add(medioTiempoJuan);
-        empleados.add(tiempoCompletoFelipe);
-        manager.removeEmployee("Felipe");
-        manager.addEmployee("Camila", "Gerencia");
+
+        manager.addEmployee(tiempoCompletoFelipe);
+        manager.addEmployee(medioTiempoJuan);
+        manager.removeEmployee(tiempoCompletoFelipe);
+
         verEmpleados(empleados);
         excel.generateReport();
 

@@ -10,18 +10,23 @@ public class EmployeeManager implements EmployeeOperations {
         this.report = report;
     }
 
-    public void addEmployee(String name, String departamento) {
-        employees.add(new Employee(name, departamento));
-    }
-
-
     @Override
     public void addEmployee(Employee employee) {
         this.employees.add(employee);
     }
 
-    public void removeEmployee(String name) {
-        employees.removeIf(employee -> name.equals(employee.getName()));
+    @Override
+    public void removeEmployee(Employee employee) {
+        this.employees.remove(employee);
     }
 
+    @Override
+    public Employee findEmployeeByName(String name) {
+        for (Employee employee : employees) {
+            if (employee.getName().equals(name)) {
+                return employee;
+            }
+        }
+        return null;
+    }
 }

@@ -1,5 +1,6 @@
 public interface EmployeeOperations {
     void addEmployee(Employee employee);
+    void removeEmployee(Employee employee);
 
-    void removeEmployee(String name);
+    Employee findEmployeeByName(String name);
 }

@@ -7,10 +7,7 @@ public class SalaryCalculator implements SalaryOperations {
 
     @Override
     public double calculateSalary(String name) {
-        String employee = employeeManager.findEmployeeByName(name);
-        if (employee != null) {
-            return 0.0; // Ejemplo
-        }
+        Employee employee = employeeManager.findEmployeeByName(name);
         return 0.0;
     }
 }
