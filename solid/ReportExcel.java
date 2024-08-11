@@ -1,5 +1,3 @@
-package com.example.demo.unsolid.solid;
-
 public class ReportExcel implements Report {
     @Override
     public void generateReport() {

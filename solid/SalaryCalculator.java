@@ -1,8 +1,3 @@
-package com.example.demo.unsolid.solid;
-
-import com.example.demo.unsolid.solid.SalaryOperations;
-import com.example.demo.unsolid.unsolid.EmployeeManager;
-
 public class SalaryCalculator implements SalaryOperations {
     private final EmployeeManager employeeManager;
 

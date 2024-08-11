@@ -1,8 +1,6 @@
-package com.example.demo.unsolid.solid;
-
 import java.util.List;
 
-public class EmployeeManager implements EmployeeOperations{
+public class EmployeeManager implements EmployeeOperations {
 
     private final List<Employee> employees;
     private final Report report;
