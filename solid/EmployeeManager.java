@@ -15,6 +15,11 @@ public class EmployeeManager implements EmployeeOperations {
     }
 
 
+    @Override
+    public void addEmployee(Employee employee) {
+        this.employees.add(employee);
+    }
+
     public void removeEmployee(String name) {
         employees.removeIf(employee -> name.equals(employee.getName()));
     }
